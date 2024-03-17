@@ -1,0 +1,22 @@
+const humanLanguages = [
+    'English',
+  'Mandarin Chinese',
+  'Spanish',
+  'Hindi',
+  'Arabic',
+  'French',
+  'Russian',
+  'Portuguese',
+  'Swahili',
+  'Japanese',
+  'German',
+  'Korean',
+  'Italian',
+  'Turkish',
+  'Dutch',
+  'Vietnamese',
+  'Bengali',
+  'Tamil',
+  'Urdu',
+  'Polish'
+  ];
