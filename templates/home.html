@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <title>Stock Visualizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<section class="navbar1">
+    <div id="menu">
+      <ul id="hands">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#markets">Markets</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#brokers">Brokers</a></li>
+          <li><a href="#more">More</a></li>
+      </ul>
+  </div>
+    <nav id="main">
+      <div class="menu-icon">
+       <button id="bars"><i class="fas fa-bars"></i></button>
+    </div>
+      <div class="logo">
+          <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" width="100" height="40">
+      </div>
+      <ul id="list">
+          <li id="a"><a href="#products" >Products</a>
+          <ul class="submenu">
+            <li><a href="">Supercharts</a></li>
+            <li><a href="">Screeners</a></li>
+            <li><a href="">Economic calendar</a></li>
+            <li><h3>About</h3>
+            <ul class="submenu1">
+              <li>Pricing</li>
+              <li>Market Data</li>
+              <li>Features</li>
+            </ul>
+          </li>
+          </ul>
+      </li>
+  
+  
+          <li><a href="#community" id="b">Community</a>
+          <ul class="submenu2">
+            <li><a href="">The Leap</a></li>
+            <li><a href="">Overview</a></li>
+            <li><a href="">Live Streams</a></li>
+            <li><a href="">Educational Ideas</a></li>
+            <li><a href="">Trade Ideas</a></li>
+            <li><a href=""></a>Scripts</li>
+            <li><h3>About</h3>
+              <ul class="submenu3">
+                <li>House Rules</li>
+                <li>Moderators</li>
+                <li>Refer a Friend</li>
+                <li>Follow Stocks</li>
+              </ul>
+            </li>
+            </ul>
+        </li>
+          </li>
+  
+  
+          <li><a href="#markets" id="c">Markets</a>
+            <ul class="submenu4">
+              <li><a href="">Overview</a></li>
+              <li><a href="">Countries</a></li>
+              <li><a href="">Sparks</a></li>
+              <li><h3>Assets</h3>
+                <ul class="submenu5">
+                  <li>Stocks</li>
+                  <li>ETF'S</li>
+                  <li>Crypto</li>
+                  <li>Forex</li>
+                  <li>Indices</li>
+                  <li>Futures</li>
+                  <li>Bonds</li>
+                  <li>World Economy</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+  
+  
+          <li><a href="#news" id="d">News</a>
+            <ul class="submenu6">
+              <li><h3>News Flow</h3>
+                <ul class="submenu7">
+                  <p id="id">What's Happening</p>
+                  <li>Markets</li>
+                  <li>World</li>
+                  <li>Corporate Activity</li>
+                  <li>Analysis</li>
+                  <li>Top Providers</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+          </li>
+  
+          <li><a href="#brokers" id="e">Brokers</a>
+          <ul class="submenu8">
+              <li><h3>Compare and Review</h3>
+                <ul class="submenu9">
+                  <p id="id">Find your Best broker</p>
+                  <li>Awards</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+          </li>
+          </li>
+  
+  
+          <li><a href="#more" id="f">More</a>
+            <ul class="submenu10">
+                <ul class="submenu11">
+                  <li>Help Center</li>
+                  <li>Downloads</li>
+                  <li>For Business</li>
+                  <li>Company</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+          </li>
+          </li>
+      </ul>
+  
+  
+  
+      <div class="profile">
+        <div class="globe">
+          <button id="globe"><i class="fa-solid fa-globe"></i></button>
+          <span id="in">IN</span>
+          <div class="hel">
+            <select name="" id="lang">
+            </select>
+          </div>
+        </div>
+        <div class="pr">
+         <button id="click"><i class="fa-solid fa-user"></i></button> 
+          <div id="pro">
+            <div class="bb">
+              <i class="fa-solid fa-user"></i>
+              <p id="yrt">Sign In</p>
+            </div>
+            <div class="center">
+              <p id="help">Help Center</p>
+              <p id="eas">What's new</p>
+            </div>
+            <div class="dark">
+              <p id="ada"> Light mode</p>
+              <button id="das">Light mode</button>
+            </div>
+            <div class="country">
+              <span id="country">Country</span>
+            </div>
+          </div>
+        </div>
+        <div class="but">
+          <button id="get">Get Started</button>
+      </div>      
+      </div>
+  </nav>
+  </nav>
+   </section>
+  
+   <section class="text">
+    <section class="first">
+      <div class="hello">
+        <h1 class="un">Unmatched charting power for</h1>
+        <h1 class="un"> your trading strategy</h1>
+        <div class="ex">
+          <p id="ee">Experience the charts, tools, and trading ideas used by</p>
+        <span id="mil">50 million people globally.</span>
+        </div>
+        <div class="input-text">
+          
+          <input type="text" placeholder="Search Markets Here">
+        </div>
+        <div class="coins">
+          <div class="bit">
+           <img src="{{ url_for('static', filename='images/Bitcoin.svg.png') }}" alt="" id="bita" >
+           <div class="text2">
+            <p id="bt">BTUSCD</p>
+            <span id="num">62 201 USD</span>
+           </div>
+          </div>
+          <div class="nifty">
+            <img src="{{ url_for('static', filename='images/Number_50.png') }}" alt="" id="baa">
+            <div class="text2">
+              <p id="bt">NIFTY</p>
+            <span id="num1">22 700 INR</span>
+            </div>
+          </div>
+          <div class="bank">
+            <img src="{{ url_for('static', filename='images/financial.svg') }}" alt="" srcset="" id="bbb">
+            <div class="text2">
+              <p id="bt">BANKNIFTY</p>
+            <span id="num2">0.00%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="video">
+      <div class="hel">
+        <h1 id="s">Where the world does markets</h1>
+      </div>
+        <div class="yy">
+          <p id="join">Join 50 million traders and investors taking the future into their own hands.</p>
+          <button id="e1">Explore Features </button>
+        </div>
+        <div class="vide">
+          <video src="{{ url_for('static', filename='images/chart-big.hvc1.6af4110d38611a03c3a4.mp4') }}" autoplay  muted></video>
+        </div>
+    </section>
+   </section>
+   <script src="{{ url_for('static', filename='language.js') }}"></script>
+  <script src="{{ url_for('static', filename='object.js') }}"></script>
+  <!-- Include the Google Translate API script -->
+  <!-- Include the translate.js file -->
+  <!-- <script type="text/javascript" src="translate.js"></script> -->
+  
+   <script src="{{ url_for('static', filename='index.js') }}"></script>
+   <script>
+    document.getElementById("get").addEventListener("click", function () {
+        // Redirect to home1.html upon button click
+        window.location.href = "{{ url_for('home1') }}";
+    });
+</script>
+</body>
+</html>
