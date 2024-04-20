@@ -81,6 +81,7 @@ def home1():
         model_inputs = scaler.transform(model_inputs)
 
         x_test = []
+        
         for x in range(prediction_days, len(model_inputs)):
             x_test.append(model_inputs[x - prediction_days:x, 0])
         x_test = np.array(x_test)
@@ -128,7 +129,7 @@ def home1():
         return render_template('home1.html', company=company, graph=graph.to_html(full_html=False), graph_type=graph_type, predicted_value=predicted_value, y_axis_attribute=y_axis_attribute)
 
     # If the request method is GET or if no company is provided, render the form template
-    return render_template('home1.html')
+    return render_template('home1.html') 
 
 def create_candlestick_graph(data, company, y_axis_attribute):
     # Create candlestick trace
