@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-container {
+    flex: 0 1 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-container label {
+    flex: 1 1 100%;
+    margin-bottom: 0.5rem;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #333; /* Darker background color */
+    color: #fff; /* White text color */
+    border: 1px solid #444; /* Darker border color */
+}
+
+.form-container button {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #444;
+}
+
+.graph-container {
+    flex: 0 1 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.graph-container h2 {
+    margin-top: 0;
+}
+
+.graph {
+    width: 100%;
+    height: 400px;
+}
+
+.company-info {
+    flex: 1 1 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-info p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.predicted-value {
+    font-style: italic;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.upward-arrow {
+    color: green;
+}
+
+.downward-arrow {
+    color: red;
+}
+
+.predicted-value-green {
+    color: green;
+}
+
+.predicted-value-red {
+    color: red;
+}
+
+/* Styles for country list */
+.country-list-container,
+.attribute-list-container {
+    position: relative;
+}
+
+.country-list,
+.attribute-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: calc(100% - 2px);
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #333;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    display: none;
+}
+
+.country-list.show,
+.attribute-list.show {
+    display: block;
+}
+
+.country-item,
+.attribute-item {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.country-item:hover,
+.attribute-item:hover {
+    background-color: #444;
+}
