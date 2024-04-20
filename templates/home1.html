@@ -3,163 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
     <title>Stock Prediction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .form-container {
-            flex: 0 1 100%;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-
-        .form-container form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .form-container label {
-            flex: 1 1 100%;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-container input[type="text"],
-        .form-container select {
-            flex: 1 1 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            background-color: #333; /* Darker background color */
-            color: #fff; /* White text color */
-            border: 1px solid #444; /* Darker border color */
-        }
-
-        .form-container button {
-            flex: 1 1 100%;
-            padding: 0.5rem;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .form-container button:hover {
-            background-color: #444;
-        }
-
-        .graph-container {
-            flex: 0 1 100%;
-            padding: 1rem;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .graph-container h2 {
-            margin-top: 0;
-        }
-
-        .graph {
-            width: 100%;
-            height: 400px;
-        }
-
-        .company-info {
-            flex: 1 1 100%;
-            padding: 1rem;
-            box-sizing: border-box;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .company-info p {
-            margin: 0;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .predicted-value {
-            font-style: italic;
-            font-size: 14px;
-            margin-left: 10px;
-        }
-
-        .upward-arrow {
-            color: green;
-        }
-
-        .downward-arrow {
-            color: red;
-        }
-
-        .predicted-value-green {
-            color: green;
-        }
-
-        .predicted-value-red {
-            color: red;
-        }
-
-        /* Styles for country list */
-        .country-list-container,
-        .attribute-list-container {
-            position: relative;
-        }
-
-        .country-list,
-        .attribute-list {
-            position: absolute;
-            top: calc(100% + 10px);
-            left: 0;
-            width: calc(100% - 2px);
-            max-height: 200px;
-            overflow-y: auto;
-            background-color: #333;
-            border: 1px solid #444;
-            padding: 0.5rem;
-            display: none;
-        }
-
-        .country-list.show,
-        .attribute-list.show {
-            display: block;
-        }
-
-        .country-item,
-        .attribute-item {
-            padding: 0.5rem;
-            cursor: pointer;
-        }
-
-        .country-item:hover,
-        .attribute-item:hover {
-            background-color: #444;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -170,40 +15,91 @@
             <div class="form-container">
                 <!-- Stock prediction form -->
                 <form method="POST" action="/home1" id="stockForm">
-                    <!-- Country selection -->
-                    <div class="country-list-container">
-                        <label for="country">Country:</label>
-                        <input type="text" id="country" name="country" value="{{ country }}" required autocomplete="off">
-                        <!-- Country list dropdown (filtered by JavaScript) -->
-                        <div class="country-list" id="country-list"></div>
-                    </div>
                     <!-- Company selection -->
-                    <div>
+                    <div class="company-list-container">
                         <label for="company">Company:</label>
-                        <input type="text" id="company" name="company" value="{{ company }}" required>
+                        <select id="company" name="company" required>
+                            <option value="MSFT">MSFT</option>
+                            <option value="AAPL">AAPL</option>
+                            <option value="NVDA">NVDA</option>
+                            <option value="GOOG">GOOG</option>
+                            <option value="AMZN">AMZN</option>
+                            <option value="META">META</option>
+                            <option value="JPM">JPM</option>
+                            <option value="TSLA">TSLA</option>
+                            <option value="WMT">WMT</option>
+                            <option value="XOM">XOM</option>
+                            <option value="PG">PG</option>
+                            <option value="JNJ">JNJ</option>
+                            <option value="HD">HD</option>
+                            <option value="BAC">BAC</option>
+                            <option value="NFLX">NFLX</option>
+                            <option value="KO">KO</option>
+                            <option value="AMD">AMD</option>
+                            <option value="DIS">DIS</option>
+                            <option value="MCD">MCD</option>
+                            <option value="CSCO">CSCO</option>
+                            <option value="GE">GE</option>
+                            <option value="BABA">BABA</option>
+                            <option value="IBM">IBM</option>
+                            <option value="VZ">VZ</option>
+                            <option value="INTC">INTC</option>
+                            <option value="PFE">PFE</option>
+                            <option value="T">T</option>
+                            <option value="C">C</option>
+                            <option value="BA">BA</option>
+                            <option value="F">F</option>
+                            <option value="CIPLA.NS">CIPLA.NS</option>
+                            <option value="NTPC.NS">NTPC.NS</option>
+                            <option value="TITAN.NS">TITAN.NS</option>
+                            <option value="BAJAJFINSV.NS">BAJAJFINSV.NS</option>
+                            <option value="HEROMOTOCO.NS">HEROMOTOCO.NS</option>
+                            <option value="COALINDIA.NS">COALINDIA.NS</option>
+                            <option value="ULTRACEMCO.NS">ULTRACEMCO.NS</option>
+                            <option value="BRITANNIA.NS">BRITANNIA.NS</option>
+                            <option value="ONGC.NS">ONGC.NS</option>
+                            <option value="MARUTI.NS">MARUTI.NS</option>
+                            <option value="RELIANCE.NS">RELIANCE.NS</option>
+                            <option value="ITC.NS">ITC.NS</option>
+                            <option value="WIPRO.NS">WIPRO.NS</option>
+                            <option value="INDUSINDBK.NS">INDUSINDBK.NS</option>
+                            <option value="BAJFINANCE.NS">BAJFINANCE.NS</option>
+                            <option value="KOTAKBANK.NS">KOTAKBANK.NS</option>
+                            <option value="ADANIENT.NS">ADANIENT.NS</option>
+                            <option value="SHRIRAMFIN.NS">SHRIRAMFIN.NS</option>
+                            <option value="APOLLOHOSP.NS">APOLLOHOSP.NS</option>
+                            <option value="LTIM.NS">LTIM.NS</option>
+                            <option value="TATACONSUM.NS">TATACONSUM.NS</option>
+                            <option value="BAJAJ-AUTO.NS">BAJAJ-AUTO.NS</option>
+                            <option value="TCS.NS">TCS.NS</option>
+                            <option value="TATASTEEL.NS">TATASTEEL.NS</option>
+                            <option value="HDFCLIFE.NS">HDFCLIFE.NS</option>
+                            <option value="BHARTIARTL.NS">BHARTIARTL.NS</option>
+                            <option value="NESTLEIND.NS">NESTLEIND.NS</option>
+
+                        </select>
                     </div>
                     <!-- Attribute selection -->
                     <div>
                         <label for="y_axis">Attribute:</label>
                         <select id="y_axis" name="y_axis" required>
-                            <option value="Open">Open</option>
-                            <option value="High">High</option>
-                            <option value="Low">Low</option>
-                            <option value="Close">Close</option>
-                            <option value="Volume">Volume</option>
+                            <option value="Open">Open-ATTRIBUTE</option>
+                            <option value="High">High-ATTRIBUTE</option>
+                            <option value="Low">Low-ATTRIBUTE</option>
+                            <option value="Close">Close-ATTRIBUTE</option>
                         </select>
                     </div>
                     <!-- Graph type selection -->
                     <div>
                         <label for="graph_type">Graph Type:</label>
                         <select id="graph_type" name="graph_type" required>
-                            <option value="candlestick">Candlestick</option>
                             <option value="line">Line</option>
-                            <option value="bar">Bar</option>
-                            <option value="hollow_candle">Hollow Candle</option>
-                            <option value="volume_candle">Volume Candle</option>
                             <option value="step_line">Step Line</option>
                             <option value="line_markers">Line with Markers</option>
+                            <option value="candlestick">Candlestick</option>
+                            <option value="hollow_candle">Hollow Candle</option>
+                            <option value="volume_candle">Volume Candle</option>
+                            <option value="bar">Bar</option>
                             <option value="area">Area</option>
                             <option value="hlc_area">HLC Area</option>
                             <option value="baseline">Baseline</option>
@@ -232,7 +128,7 @@
             </div>
             <!-- Stock graph container -->
             <div class="graph-container">
-                <h2>Stock Graph</h2>
+                <h2>Stock Graph - {{ graph_type }} </h2>
                 <!-- Display stock graph (if available) -->
                 {% if graph %}
                     {{ graph | safe }}
@@ -240,63 +136,17 @@
             </div>
         </div>
     </div>
+
     <script>
-        
-        // JavaScript code for filtering country list
-        window.onload = function() {
-    var countryInput = document.getElementById('country');
-    var countryList = document.getElementById('country-list');
-    var selectedCountry = localStorage.getItem('selectedCountry'); // Retrieve selected country from local storage
-
-    // List of countries
-    var countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Côte d'Ivoire", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo (Congo-Brazzaville)", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia (Czech Republic)", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini (fmr. Swaziland)", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar (formerly Burma)", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
-
-    // Function to filter countries based on input
-    var filterCountries = function(input) {
-        // Clear previous list items
-        countryList.innerHTML = '';
-        // Filter countries based on input
-        var filteredCountries = countries.filter(country =>
-            country.toLowerCase().includes(input.toLowerCase()));
-
-        // Display filtered countries
-        filteredCountries.forEach(country => {
-            const countryItem = document.createElement('div');
-            countryItem.classList.add('country-item');
-            countryItem.textContent = country;
-            countryItem.addEventListener('click', function() {
-                countryInput.value = country;
-                localStorage.setItem('selectedCountry', country); // Save selected country to local storage
-                countryList.classList.remove('show'); // Hide the list after selection
-            });
-            countryList.appendChild(countryItem);
-        });
-
-        // Show the country list
-        countryList.classList.add('show');
-    };
-
-    // Set the initial value of country input from local storage
-    if (selectedCountry) {
-        countryInput.value = selectedCountry;
-    }
-
-    // Event listener for input on country input
-    countryInput.addEventListener('input', function() {
-        filterCountries(countryInput.value);
-    });
-
-    // Hide the country list when clicking outside the input field and the list
-    document.addEventListener('click', function(event) {
-        if (!countryList.contains(event.target) && event.target !== countryInput) {
-            countryList.classList.remove('show');
-        }
-    });
-    var attributeInput = document.getElementById('y_axis');
-    var hiddenAttributeInput = document.getElementById('selected_attribute');
-    var selectedAttribute = localStorage.getItem('selectedAttribute'); // Retrieve selected attribute from local storage
+// On page load, retrieve and set the input values and graph data from session storage
+window.onload = function() {
+    
+    // Retrieve selected attribute from local storage
+    var selectedAttribute = localStorage.getItem('selectedAttribute');
 
     // Set the initial value of attribute input from local storage
+    var attributeInput = document.getElementById('y_axis');
+    var hiddenAttributeInput = document.getElementById('selected_attribute');
     if (selectedAttribute) {
         attributeInput.value = selectedAttribute;
         hiddenAttributeInput.value = selectedAttribute; // Update hidden input value with selected attribute
@@ -307,34 +157,46 @@
         localStorage.setItem('selectedAttribute', attributeInput.value); // Save selected attribute to local storage
         hiddenAttributeInput.value = attributeInput.value; // Update hidden input value with selected attribute
     });
+
+    // Retrieve selected graph type from session storage
+    var storedGraphType = sessionStorage.getItem('graph_type');
+
+    // Set the initial value of graph type input from session storage
+    var graphTypeInput = document.getElementById('graph_type');
+    if (storedGraphType) {
+        graphTypeInput.value = storedGraphType;
+    }
+
+    // Get the form and its input elements
+    var form = document.getElementById('stockForm');
+    var companyInput = document.getElementById('company');
+
+    // On form submit, store the input values and graph data in session storage
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        sessionStorage.setItem('company', companyInput.value);
+        sessionStorage.setItem('graph_type', graphTypeInput.value);
+        // Store graph data if available
+        // Replace 'graphDataAvailable' with your condition to check if graph data is available
+        if (graphDataAvailable) {
+            storeGraphData(graphData); 
+        }
+    });
+
+    // On page load, retrieve and set the input values from session storage
+    var storedCompany = sessionStorage.getItem('company');
+    if (storedCompany) {
+        companyInput.value = storedCompany;
+    }
+
+    // Display graph if available
+    var storedGraphData = retrieveGraphData();
+    if (storedGraphData) {
+        displayGraph(storedGraphData); // Assuming you have a function to display the graph
+    }
 };
 
-            // Event listener for input on attribute input
-            attributeInput.addEventListener('input', function() {
-                filterAttributes(attributeInput.value);
-            });
-
-            // Hide the attribute list when clicking outside the input field and the list
-            document.addEventListener('click', function(event) {
-                if (!attributeList.contains(event.target) && event.target !== attributeInput) {
-                    attributeList.classList.remove('show');
-                }
-            });
-        
-
-        // JavaScript code for updating hidden input with selected attribute value
-        document.addEventListener('DOMContentLoaded', function() {
-            var attributeInput = document.getElementById('attribute');
-            var hiddenAttributeInput = document.getElementById('selected_attribute');
-
-            // Update hidden input value when attribute selection changes
-            attributeInput.addEventListener('change', function() {
-                hiddenAttributeInput.value = attributeInput.value;
-            });
-
-            // Set the initial value of hidden input
-            hiddenAttributeInput.value = attributeInput.value;
-        });
-    </script>
+</script>
 </body>
-</html>
+</html> 
+
