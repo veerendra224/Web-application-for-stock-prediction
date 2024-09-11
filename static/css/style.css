@@ -1,0 +1,391 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.navbar1 {
+    border: 2px solid;
+    width: 100vw;
+    height: 20vh;
+    background-color: black;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+.menu-icon {
+    color: white;
+    display: none;
+}
+
+#list {
+    display: flex;
+    color: white;
+    gap: 25px;
+}
+
+.profile {
+    color: white;
+    padding: 0px 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#get {
+    background: linear-gradient(to right, rgb(235, 24, 56), rgb(28, 184, 236));
+    height: 46px;
+    width: 110px;
+    border-radius: 25px;
+}
+
+a {
+    font-size: 15px;
+}
+
+a:hover {
+    background-color: rgb(171, 169, 169);
+    border-radius: 10px;
+}
+e1 {
+    font-size: 15px;
+}
+
+e1:hover {
+    background-color: rgb(171, 169, 169);
+    border-radius: 10px;
+}
+e2 {
+    font-size: 15px;
+}
+
+e2:hover {
+    background-color: rgb(171, 169, 169);
+    border-radius: 10px;
+}
+/* media queries*/
+@media screen and (max-width: 758px) {
+    #list {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        padding-left: 20px;
+    }
+
+    #main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        transform: translateX(-121px);
+    }
+}
+
+#id {
+    font-size: 10px;
+}
+
+.submenu {
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+
+}
+
+.submenu1 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+a:hover+.submenu {
+    display: block;
+}
+
+.submenu2 {
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+
+}
+
+a:hover+.submenu2 {
+    display: block;
+}
+
+.submenu4 {
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+}
+
+a:hover+.submenu4 {
+    display: block;
+}
+
+.submenu6 {
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+}
+a:hover+.submenu6 {
+    display: block;
+}
+.submenu8{
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+}
+a:hover+.submenu8 {
+    display: block;
+}
+.submenu10{
+    border: 2px solid;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    z-index: 99;
+    top: 100px;
+    display: none;
+}
+a:hover+.submenu10 {
+    display: block;
+}
+.text{
+    background-color: black;
+    width: 100vw;
+    color: aliceblue;
+    height: 1200px;
+}
+.hello{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.coins{
+    display: flex;
+    gap: 35px;
+}
+.text2{
+    display: flex;
+    flex-direction: column;
+}
+.bit,.nifty,.bank{
+    display: flex;
+    gap: 30px;
+    border: 2px solid;
+    width: 200px;
+    border-radius: 45px;
+    height: 70px;
+}
+#bita,#baa,#bbb{
+    border-radius: 55px;
+   transform: translate(10px,5px);
+    width:40px ;
+     height:52px;
+}
+
+input[type='text']{
+   width: 27rem;
+   height: 4rem;
+   border-radius: 25px;
+   padding: 20px 45px;
+   background-color: black;
+   position: relative;
+
+}
+@media screen and (max-width: 666px) {
+    section.first {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .coins{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    input[type='text']{
+        width: 20rem;
+    }
+    .fa-solid.fa-magnifying-glass{
+        position: absolute;
+        left: 125px;
+    }
+}
+
+input[type='text']:hover{
+    box-shadow: 2px 2px 2px  aqua;
+}
+.video{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.yy{
+    text-align: center;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+}
+.vide{
+    width: 80%;
+    height: 100%;
+}
+
+.un ,#s{
+    font-weight: 700;
+    font-size: 42px;
+}
+.ex{
+    display: flex;
+    flex-direction: column;
+}
+#ee, #mil, #join{
+    font-weight: 600;
+    font-size: 21px;
+}
+#menu{
+    position: absolute;
+    z-index: 99;
+    color: black;
+    width: 300px;
+    height: 260px;
+    background-color: white;
+    top: 90px;
+    left: 17px;
+    display: none;
+}
+#hands{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#lang{
+    color: black;
+    position: absolute;
+    right: 230px;
+    display: none;
+
+}
+#pro{
+    position: absolute;
+    z-index: 999;
+   background-color: white;
+    width: 224px;
+    height: 200px;
+    transform: translateX(-50px);
+    color: black;
+    display: none;
+}
+.bb{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid;
+    height: 50px;
+    padding: 0px 10px;
+}
+.center{
+    text-align: start;
+    padding: 0px 10px;
+    border-bottom: 2px solid;
+}
+.dark{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid;
+    height: 50px;
+    align-items: center;
+
+}
+#das{
+    border: 2px solid;
+    border-radius: 25px;
+    width: 125px;
+    height: 35px;
+}
