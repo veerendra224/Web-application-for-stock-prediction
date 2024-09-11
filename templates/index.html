@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1; 
+            position: relative;
+        }
+
+        h1 {
+            color: #fff;
+            animation: textAnimation 3s infinite alternate;
+        }
+
+        #enterButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #enterButton:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes textAnimation {
+            0% {
+                color: #faf9fa;
+            }
+
+            50% {
+                color: #befbfb2f;
+            }
+
+            100% {
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="{{ url_for('static', filename='images/Digital globe.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h1>Stock Predictor</h1>
+        <button id="enterButton">Enter</button>
+    </div>
+
+    <script>
+        document.getElementById("enterButton").addEventListener("click", function () {
+            window.location.href = "{{ url_for('home') }}";
+        });
+    </script>
+</body>
+
+</html>

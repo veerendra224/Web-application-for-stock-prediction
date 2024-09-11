@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Profit</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #ff7f00;
+        }
+
+        form {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #ff7f00;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px; 
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #777;
+            background-color: #555;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 16px; 
+        }
+
+        input[type="submit"] {
+            background-color: #ff7f00;
+            color: #fff;
+            border: none;
+            padding: 14px 24px; 
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px; 
+        }
+
+        #profit {
+            margin-top: 20px;
+            color: #f8f7f7;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/profit" method="post">
+        <!-- Company selection -->
+        <div class="company-list-container">
+            <label for="company">Company:</label>
+            <select id="company" name="company" required>
+                <option value="MSFT">MSFT</option>
+                <option value="AAPL">AAPL</option>
+                <option value="NVDA">NVDA</option>
+                <option value="GOOG">GOOG</option>
+                <option value="AMZN">AMZN</option>
+                <option value="META">META</option>
+                <option value="JPM">JPM</option>
+                <option value="TSLA">TSLA</option>
+                <option value="WMT">WMT</option>
+                <option value="XOM">XOM</option>
+                <option value="PG">PG</option>
+                <option value="JNJ">JNJ</option>
+                <option value="HD">HD</option>
+                <option value="BAC">BAC</option>
+                <option value="NFLX">NFLX</option>
+                <option value="KO">KO</option>
+                <option value="AMD">AMD</option>
+                <option value="DIS">DIS</option>
+                <option value="MCD">MCD</option>
+                <option value="CSCO">CSCO</option>
+                <option value="GE">GE</option>
+                <option value="BABA">BABA</option>
+                <option value="IBM">IBM</option>
+                <option value="VZ">VZ</option>
+                <option value="INTC">INTC</option>
+                <option value="PFE">PFE</option>
+                <option value="T">T</option>
+                <option value="C">C</option>
+                <option value="BA">BA</option>
+                <option value="F">F</option>
+                <option value="CIPLA.NS">CIPLA.NS</option>
+                <option value="NTPC.NS">NTPC.NS</option>
+                <option value="TITAN.NS">TITAN.NS</option>
+                <option value="BAJAJFINSV.NS">BAJAJFINSV.NS</option>
+                <option value="HEROMOTOCO.NS">HEROMOTOCO.NS</option>
+                <option value="COALINDIA.NS">COALINDIA.NS</option>
+                <option value="ULTRACEMCO.NS">ULTRACEMCO.NS</option>
+                <option value="BRITANNIA.NS">BRITANNIA.NS</option>
+                <option value="ONGC.NS">ONGC.NS</option>
+                <option value="MARUTI.NS">MARUTI.NS</option>
+                <option value="RELIANCE.NS">RELIANCE.NS</option>
+                <option value="ITC.NS">ITC.NS</option>
+                <option value="WIPRO.NS">WIPRO.NS</option>
+                <option value="INDUSINDBK.NS">INDUSINDBK.NS</option>
+                <option value="BAJFINANCE.NS">BAJFINANCE.NS</option>
+                <option value="KOTAKBANK.NS">KOTAKBANK.NS</option>
+                <option value="ADANIENT.NS">ADANIENT.NS</option>
+                <option value="SHRIRAMFIN.NS">SHRIRAMFIN.NS</option>
+                <option value="APOLLOHOSP.NS">APOLLOHOSP.NS</option>
+                <option value="LTIM.NS">LTIM.NS</option>
+                <option value="TATACONSUM.NS">TATACONSUM.NS</option>
+                <option value="BAJAJ-AUTO.NS">BAJAJ-AUTO.NS</option>
+                <option value="TCS.NS">TCS.NS</option>
+                <option value="TATASTEEL.NS">TATASTEEL.NS</option>
+                <option value="HDFCLIFE.NS">HDFCLIFE.NS</option>
+                <option value="BHARTIARTL.NS">BHARTIARTL.NS</option>
+                <option value="NESTLEIND.NS">NESTLEIND.NS</option>
+
+            </select>
+        </div>
+        
+        <label for="num_shares">Number of Shares:</label><br>
+        <input type="number" id="num_shares" name="num_shares"><br><br>
+        
+        <label for="buying_date">Buying Date:</label><br>
+        <input type="date" id="buying_date" name="buying_date"><br><br>
+        
+        <label for="selling_date">Selling Date:</label><br>
+        <input type="date" id="selling_date" name="selling_date"><br><br>
+        
+        <input type="submit" value="Calculate Profit">
+    </form>
+    <div id="profit">The profit is: {{profit}}</div>
+</body>
+</html>
